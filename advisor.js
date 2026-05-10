@@ -7,7 +7,7 @@ async function callClaude(systemPrompt, userPrompt, maxTokens = 1500) {
   const res = await axios.post(
     "https://api.anthropic.com/v1/messages",
     {
-      model: "claude-3-5-sonnet-20241022",
+      model: "claude-3-haiku-20240307",
       max_tokens: maxTokens,
       system: systemPrompt,
       messages: [{ role: "user", content: userPrompt }],
