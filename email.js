@@ -3,8 +3,8 @@ const sgMail = require("@sendgrid/mail");
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const ALERT_EMAIL = process.env.ALERT_EMAIL || "abcintel012525@gmail.com";
-const FROM_EMAIL  = "abcintel@yourdomain.com"; // update with your verified SendGrid sender
+const ALERT_EMAIL = process.env.ALERT_EMAIL || "patel10217@gmail.com";
+const FROM_EMAIL  = "abcintel012525@gmail.com"; // update with your verified SendGrid sender
 
 // ── HTML EMAIL WRAPPER ────────────────────────────────────────────────────────
 function wrapHtml(title, body, accentColor = "#00ff9d") {
