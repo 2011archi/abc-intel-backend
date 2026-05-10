@@ -154,7 +154,7 @@ Holdings: 401K in MDIZX/VIIIX/VBTIX, IRA in VTI/VGT/VXUS, Brokerage in VOO.`;
 });
 
 // ── MANUAL TRIGGERS (for testing) ────────────────────────────────────────────
-app.post("/api/trigger/daily-briefing", async (req, res) => {
+app.all("/api/trigger/daily-briefing", async (req, res) => {
   try {
     await runDailyBriefing();
     res.json({ success: true, message: "Daily briefing triggered" });
@@ -163,7 +163,7 @@ app.post("/api/trigger/daily-briefing", async (req, res) => {
   }
 });
 
-app.post("/api/trigger/weekly-report", async (req, res) => {
+app.all("/api/trigger/weekly-report", async (req, res) => {
   try {
     await runWeeklyReport();
     res.json({ success: true, message: "Weekly report triggered" });
@@ -172,7 +172,7 @@ app.post("/api/trigger/weekly-report", async (req, res) => {
   }
 });
 
-app.post("/api/trigger/alerts", async (req, res) => {
+app.all("/api/trigger/alerts", async (req, res) => {
   try {
     await alerts.runAllAlertChecks();
     res.json({ success: true, message: "Alert checks triggered" });
@@ -181,7 +181,7 @@ app.post("/api/trigger/alerts", async (req, res) => {
   }
 });
 
-app.post("/api/trigger/signals", async (req, res) => {
+app.all("/api/trigger/signals", async (req, res) => {
   try {
     await runBuySellSignals();
     res.json({ success: true, message: "Buy/sell signals triggered" });
