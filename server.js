@@ -140,7 +140,7 @@ Monthly surplus: $${derived.surplus}. Savings rate: ${derived.savRate.toFixed(1)
 Holdings: 401K in MDIZX/VIIIX/VBTIX, IRA in VTI/VGT/VXUS, Brokerage in VOO.`;
 
     const r = await axios.post("https://api.anthropic.com/v1/messages",
-      { model: "claude-sonnet-4-20250514", max_tokens: 500,
+      { model: "claude-3-5-sonnet-20241022", max_tokens: 500,
         system: `You are ABC Intel, Bhavesh's AI financial advisor. Context: ${context}. Answer concisely and specifically.`,
         messages: [{ role: "user", content: question }] },
       { headers: { "x-api-key": process.env.ANTHROPIC_API_KEY,
